@@ -1,0 +1,40 @@
+
+#wrap{
+  width: 100%;
+  height: auto;
+  background-color: #F9F8F6;
+}
+
+#title{
+  width: 100%;
+  height: auto;
+  padding-top: 137px;
+  display: flex;
+  justify-content: center;
+}
+
+#title p {
+  color:#047D5A;
+  font-weight: 700;
+  font-size: 130px;
+}
+
+/* 테이블 섹션 */
+#tableWrap{
+  width: 1160px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.0);
+  margin: 0 auto;
+}
+
+#listBtn{
+  float: right;
+  
+}
+
+
+table{
+  border: 1px solid #d7d7d7;
+  width: 100%;
+}
+
