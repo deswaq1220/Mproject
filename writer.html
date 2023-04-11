@@ -15,25 +15,34 @@
 </head>
 <body>
   <div id="wrap">
-    <div id="title" class="clearfix">
-      <p>SAY SOMETHING</p>
+    <!-- 헤더 -->
+    <div id="logo" class="clearfix">
+      <p><a href="#">SAY SOMETHING</a></p>
     </div>
     <!-- 테이블 섹션 -->
    <div id="tableWrap">
-    <input type="button" value="글 목록" id="listBtn">
-    <table>
-      <tr>
-        <th>제목</th>
-      </tr>
+    <input type="button" value="글 목록" id="listBtn" style="font-weight : bold ;">
+    <div id="tableBox">
       <tr>
         <td>
           <input type="text" placeholder="제목을 입력하세요">
         </td>
-        
-        <textarea placeholder="내용을 입력하세요"></textarea>
       </tr>
+      <tr>
+        <td>
+          <textarea placeholder="내용을 입력하세요" id="text"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <textarea placeholder="#나대지마" id="hash" style="overflow:hidden"></textarea>
+        </td>
+      </tr>
+
+      <input type="file" name="profile" id="upload">
+
        <td>
-         <input type="button" value="등록">
+         <input type="button" value="등록" style="font-weight : bold ;">
        </td>
      </tr>
      </table>
@@ -41,7 +50,8 @@
   </div>
 
 
+
+
 <!-- 스크립트 -->
-  <script></script>
 </body>
 </html>
