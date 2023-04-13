@@ -8,7 +8,14 @@ input{
   color: #5E6790;
   font-weight: 500;
 }
-
+/* 겉 실선 */
+#tableBox{
+  border: 1px solid #434343;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
 
 /* 제목 */
 input[type="text"]{
@@ -16,6 +23,7 @@ input[type="text"]{
   padding: 10px 10px;
   margin:15px 15px;
   box-sizing: border-box;
+  border: 1px solid #dddddd;
   
 }
 /* 본문,댓글 작성 */
@@ -29,6 +37,7 @@ textarea{
   resize: none;
   border: none;
   border-radius: 0;
+  border: 1px solid #dddddd;
 }
 textarea:focus{
   outline: none;
@@ -40,6 +49,7 @@ input[type="button"]{
   margin-right: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
+  
 }
 /* 해시태그 */
 #hash{
@@ -62,3 +72,29 @@ input[type="button"]{
 
 
 
+/* label 태그의 스타일 */
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #5E6790;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
+}
+
+.custom-file-upload:hover {
+  background-color: #32374d;
+}
+
+#fileName{
+  display: inline;
+}
+
+/* input 태그의 스타일 (숨김) */
+input[type="file"] {
+  display: none;
+}

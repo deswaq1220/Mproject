@@ -35,23 +35,26 @@
       </tr>
       <tr>
         <td>
-          <textarea placeholder="#나대지마" id="hash" style="overflow:hidden"></textarea>
+          <textarea placeholder="#해시태그" id="hash" style="overflow:hidden"></textarea>
         </td>
       </tr>
 
-      <input type="file" name="profile" id="upload">
+      <label for="file-upload" class="custom-file-upload">
+        파일 선택하기
+      </label>
+      <input id="file-upload" type="file" name="file" />
+      <!-- 선택된 파일명을 보여주는 영역 -->
+      <div id="fileName"></div>
 
        <td>
          <input type="button" value="등록" style="font-weight : bold ;">
        </td>
      </tr>
-     </table>
+
    </div>
   </div>
 
-
-
-
 <!-- 스크립트 -->
+<script src="js/fileName.js"></script>
 </body>
 </html>

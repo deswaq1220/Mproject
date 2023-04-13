@@ -20,6 +20,7 @@ input[type="button"]{
   width: 100%;
   height: auto;
   border-radius: 15px;
+  background-color: #FCFCFC;
 }
 
 .titleArea{
@@ -30,6 +31,8 @@ input[type="button"]{
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  background-color: #5E6790;
+  color: white;
 }
 .date{
   margin-left: 30px;
@@ -99,6 +102,7 @@ input[type="button"]{
   padding: 8px 26px;
   box-sizing: border-box;
   color: #5E6790;
+  background-color: #FCFCFC;
 }
 
 .anonymous{
@@ -130,6 +134,8 @@ input[type="button"]{
 }
 .comDate,.comTime{
   font-size: 12px;
+  display: inline;
+  float: left;
 }
 
 #postComment{
@@ -150,6 +156,7 @@ input[type="text"]{
 #postComment{
   display: flex;
   justify-content: space-between;
+  background-color: #FCFCFC;
 }
 
 textarea{
