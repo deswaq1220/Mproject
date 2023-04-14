@@ -37,6 +37,14 @@ commentList.addEventListener('click', function(e) {
     }
     replyWrap.appendChild(replyForm);
 
+    // 폼 요소와 서버를 연결
+    var replySubmitBtn = replyForm.querySelector('.reply-submit');
+    replySubmitBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // 기본 동작 막기
+      // 서버로 데이터 전송하는 코드
+      // ...
+    });
+
     // 스크롤을 아래로 내려서 대댓글 입력창이 보이게 함
     replyForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } else if (e.target && e.target.className == 'reply-cancel') {
@@ -50,7 +58,8 @@ document.addEventListener('click', function(e) {
   if (e.target && e.target.className == 'reply-submit') {
     // 대댓글 작성 내용 가져오기
     var commentId = e.target.getAttribute('data-comment-id');
-    var replyTextarea = document.querySelector(`#reply-form-${commentId} .reply-textarea`);
+    var replyForm = document.querySelector(`#reply-form-${commentId}`);
+    var replyTextarea = replyForm ? replyForm.querySelector('.reply-textarea') : null;
     if (replyTextarea) {
       // 대댓글 객체 생성
       var replyText = replyTextarea.value.trim();
@@ -59,44 +68,31 @@ document.addEventListener('click', function(e) {
         commentId: commentId,
         text: replyText,
         date: new Date(),
-        author: '익명'
+        author: '익명',
       };
+      
 
-    // 대댓글 HTML 생성
-  var replyHTML = `
-  <li class="comList reply">
-    <div class="anonymousWrap">
-      <span class="anonymous">${reply.author}</span>
-    </div>
-    <span class="itemText">${reply.text}</span>
-    <div class="replyInfo">
-      <span class="replyDate">${reply.date}</span>
-      <button class="replyDeleteBtn">삭제</button>
-      <button class="replyModifyBtn">수정</button>
-      <button class="replyBtn">대댓글</button>
-    </div>
-  </li>`;
+      // 대댓글 HTML 생성
+      var replyHTML = `
+        <li class="comList reply">
+          <div class="anonymousWrap">
+            <span class="anonymous">${reply.author}</span>
+          </div>
+          <span class="itemText">${reply.text}</span>
+          <div class="replyInfo">
+            <span class="replyDate">${reply.date}</span>
+            <button class="replyDeleteBtn">삭제</button>
+            <button class="replyModifyBtn">수정</button>
+            <button class="replyBtn">대댓글</button>
+          </div>
+        </li>`;
 
-// 대댓글 HTML을 댓글 리스트에 추가
-var commentList = document.getElementById('comListWrap');
-var parentComment = document.getElementById(commentId);
-var replyWrap = parentComment.querySelector('.reply-wrap');
-if (!replyWrap) {
-  replyWrap = document.createElement('div');
-  replyWrap.setAttribute('class', 'reply-wrap');
-  parentComment.appendChild(replyWrap);
-}
-var replyList = replyWrap.querySelector('.reply-list');
-if (!replyList) {
-  replyList = document.createElement('ul');
-  replyList.setAttribute('class', 'reply-list');
-  replyWrap.appendChild(replyList);
-}
-replyList.innerHTML += replyHTML;
+      // 대댓글 HTML을 댓글 리스트에 추가
+      var commentList = document.getElementById('comListWrap');
+      var parentComment = document.getElementById(commentId);
 
-// 대댓글 입력창 제거
-var replyForm = document.getElementById(`reply-form-${commentId}`);
-replyForm.remove();
-}
-}
+      // 대댓글 입력창 제거
+      replyForm.remove();
+    }
+  }
 });

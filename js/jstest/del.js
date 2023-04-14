@@ -1,8 +1,12 @@
+
+
+
 // 댓글 작성 버튼을 누르면 실행됩니다.
 function postComment() {
   // 입력된 댓글을 가져옵니다.
   var commentText = document.getElementById("postArea").value;
 
+  
   // 댓글이 비어 있으면 경고창을 띄우고 함수를 종료합니다.
   if (commentText == "") {
     alert("댓글을 입력해주세요.");
@@ -22,7 +26,6 @@ function postComment() {
   anonymousWrap.appendChild(anonymous);
   var delBtn = document.createElement("button");
   delBtn.className = "anonymousBtn delBtn";
-  delBtn.style.fontWeight = "bold";
   delBtn.appendChild(document.createTextNode("삭제"));
   delBtn.addEventListener("click", deleteComment);
   anonymousWrap.appendChild(delBtn);
@@ -54,6 +57,9 @@ function postComment() {
 
   // 입력 창을 초기화합니다.
   document.getElementById("postArea").value = "";
+
+  const commentNumEl = document.querySelector('.commentNum');
+  commentNumEl.textContent = ++commentNum;
 }
 
 // 댓글 삭제 버튼을 누르면 실행됩니다.
@@ -71,6 +77,8 @@ var delButtons = document.getElementsByClassName("delBtn");
 for (var i = 0; i < delButtons.length; i++) {
   delButtons[i].addEventListener("click", deleteComment);
 }
+
+
 
 // 좋아요 버튼 클릭하면 카운트 된다
 const likeBtn = document.querySelector('.likeBtn');

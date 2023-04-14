@@ -179,6 +179,17 @@ textarea{
 textarea:focus{
   outline: none;
 }
+
+textarea::-webkit-scrollbar{
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb{
+  background-color:  #5E6790;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
 #post{
   width: 100px;
   background: inherit ;
@@ -221,6 +232,39 @@ textarea:focus{
   display: flex;
   justify-content: space-between;
 }
+
+.reply-submit, .reply-cancel{
+  width: 80px;
+  height:50px ;
+  background: inherit ;
+  border:none; 
+  box-shadow:none; 
+  border-radius:0;
+  padding:0; 
+  overflow:visible;
+  cursor:pointer;
+  color:#5E6790;
+  font-weight: 400;
+  font-family: 'S-CoreDream-3Light';
+  transition: background-color 0.3s ease;
+}
+.reply-cancel:hover, .reply-submit:hover{
+  background-color: #5E6790;
+  color: white;
+}
+.reply-submit{
+  margin-right: 10px;
+}
+
+.button-wrap{
+  display: flex;
+  justify-content: flex-start;
+}
+#reply-form-null{
+  height: auto;
+}
+
+
 
 
 
