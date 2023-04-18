@@ -94,6 +94,15 @@ body::-webkit-scrollbar-thumb{
 }
 
 
+.tagify {
+  margin: 15px 15px; 
+
+
+}
+.tagify:focus{
+  border-color: #5E6790;
+}
+
 
 
 

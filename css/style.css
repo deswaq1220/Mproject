@@ -66,9 +66,9 @@ input[type="button"]{
   
 }
 /* 해시태그 */
-#hash{
+.tagify--outside{
   margin:15px 15px;
-  height: 30px;
+
 }
 /* 본문 작성 높이값 */
 #text{
@@ -83,6 +83,42 @@ input[type="button"]{
   font-weight: 500;
   margin-left: 15px;
 }
+
+.tagify{    
+  width: 100%;
+  max-width: 1100px;
+  /* background-color: #fff; */
+}
+
+.tagify--outside{
+    border: 10px so;
+}
+
+.tagify--outside .tagify__input{
+  order: -1;
+  flex: 100%;
+  /* border: 1px solid var(--tags-border-color); */
+  margin-bottom: 1em;
+  transition: .1s;
+}
+
+.tagify--outside .tagify__input:hover{ border-color:none; }
+.tagify--outside.tagify--focus .tagify__input{
+  transition:0s;
+  border-color: none;
+}
+
+.tagify--focus {
+  border-color: #32374d;
+  transition: 0s
+}
+
+
+.tagify{
+  border-style: none;
+}
+
+
 
 
 
@@ -113,32 +149,3 @@ input[type="file"] {
   display: none;
 }
 
-#sayimg{
-  width: 200px;
-  height: 200px;
-  background-image: url(../뭐가문제야.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  animation: ani 0.3s infinite;
-}
-#sayimg2{
-  width: 200px;
-  height: 200px;
-  background-image: url(../뭐가문제야.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  animation: rotate_logo 15s linear infinite;
-  animation: ani 0.3s infinite;
-}
-
-
-@keyframes ani {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
